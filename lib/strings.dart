@@ -3,4 +3,5 @@ class Strings{
   static const String path="/posts";
   static const String errorMessage="Invalid";
   static const String comment="/comments";
+  static const String patch="/posts/1";
 }
