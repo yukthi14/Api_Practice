@@ -3,7 +3,6 @@ import 'package:api_practice/bloc/bloc_event.dart';
 import 'package:api_practice/bloc/bloc_state.dart';
 import 'package:api_practice/strings.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:fluttertoast/fluttertoast.dart';
 import 'package:http/http.dart' as http;
 import 'package:http/http.dart';
 
@@ -16,9 +15,6 @@ class ApiPractice extends Bloc<InterfaceEvent, InterfaceState> {
         //print(response.body);
         var data = json.decode(response.body) as List;
         if (response.statusCode == 200) {
-          // for(Map i in data) {
-          //   show.add(i);
-          // }
           print(data);
         }
 
@@ -48,11 +44,9 @@ class ApiPractice extends Bloc<InterfaceEvent, InterfaceState> {
             body: {
               "userId": "1",
               "id": "5",
-              "title": "SETU IS SEXY",
-              "body": "sexy sexy sexy setu"
+              "title": "Hello",
+              "body": "Good Morning"
             });
-        // print(response.body);
-        // print(response.statusCode);
       }
       catch (e) {
         print("Data cannot be inserted");
@@ -72,16 +66,6 @@ class ApiPractice extends Bloc<InterfaceEvent, InterfaceState> {
           print(value.statusCode);
           print(value.body);
         });
-        //  if(response.statusCode==200){
-        //    Fluttertoast.showToast(msg:"patch success" );
-        //  emit(ToastMsgState(toastMsg: "patch success"));
-        //  }
-        //  else{
-        //    Fluttertoast.showToast(msg:"patch not success" );
-        //    emit(ToastMsgState(toastMsg: "patch not success"));
-        //  }
-        // print(response.body);
-        // print(response.statusCode);
         emit(ToastMsgState(toastMsg: "patch success"));
       }
       catch (e) {

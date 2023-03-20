@@ -2,9 +2,6 @@ import 'package:api_practice/bloc/bloc_main.dart';
 import 'package:api_practice/bloc/bloc_state.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:fluttertoast/fluttertoast.dart';
-
-import 'FirstPage.dart';
 import 'bloc/bloc_event.dart';
 
 class HomePage extends StatefulWidget {
@@ -34,8 +31,6 @@ class _HomePageState extends State<HomePage> {
                 Padding(
                   padding: const EdgeInsets.only(top:50.0,left: 10),
                   child: ElevatedButton(onPressed: (){
-                  // Navigator.push(context,
-                  // MaterialPageRoute(builder: (context) => const FirstPage()));
                     _bloc.add(ButtonEvent());
                   }, child:const Text(
                     "Comment",style: TextStyle(fontSize: 20),
@@ -114,7 +109,6 @@ class _HomePageState extends State<HomePage> {
           children: [
            Text("${post["id"]}\n"),
            // Text("${post["title"]}"),
-
           ],
         );
       }),
@@ -131,7 +125,6 @@ class _HomePageState extends State<HomePage> {
                 Text("postId: ${comments["postId"]}\n"),
                 Text("id: ${comments["id"]}\n"),
                 Text(comments["email"].toString()),
-               // Text(comments["name"].toString()),
               ],
             );
           }),
